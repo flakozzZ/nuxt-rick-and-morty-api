@@ -1,5 +1,14 @@
+<script setup>
+
+</script>
+
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+    <AppHeader/>
+    <NuxtLayout>
+      <nuxt-page/>
+    </NuxtLayout>
 </template>
+
+<style scoped>
+
+</style>
