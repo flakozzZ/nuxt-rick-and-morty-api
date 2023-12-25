@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template>
-  <div class="w-full bg-color-1 p-4">
+  <div class="w-full bg-color-1 p-4 mb-12">
     <nav>
       <ul class="flex gap-4 justify-center text-2xl text-white font-bold">
         <li>
@@ -14,14 +14,14 @@ export default {
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink
+          <NuxtLink to="/characters"
               class="hover:bg-white hover:bg-opacity-30 hover:border-white transition duration-300 ease-in-out border-transparent p-4">
             Characters
 
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink
+          <NuxtLink to="/locations"
               class="hover:bg-white hover:bg-opacity-30 hover:border-white transition duration-300 ease-in-out border-transparent p-4">
             Locations
 

@@ -8,16 +8,26 @@ export const useEpisodeStore = defineStore('episode', {
     }),
     actions: {
         async GET_ALL_EPISODES() {
-            const response = await axios.get('https://rickandmortyapi.com/api/episode')
-            this.episodes = response.data.results;
+            try {
+                const response = await axios.get('https://rickandmortyapi.com/api/episode')
+                this.episodes = response.data.results;
+            } catch (e) {
+                console.error(e)
+            }
+
         },
         async GET_CHARACTER_EPISODES(id: string | string[]) {
-            const response = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`)
-            const episodeCharacters = response.data
-            const getURL = episodeCharacters.characters;
-            const getMap = getURL.map((url: string) => axios.get(url))
-            const getPromise = await Promise.all(getMap)
-            this.characters = getPromise.map((getResponse) => getResponse.data);
+            try {
+                const response = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`)
+                const episodeCharacters = response.data
+                const getURL = episodeCharacters.characters;
+                const getMap = getURL.map((url: string) => axios.get(url))
+                const getPromise = await Promise.all(getMap)
+                this.characters = getPromise.map((getResponse) => getResponse.data);
+
+            } catch (e) {
+                console.error(e)
+            }
 
         }
     }
