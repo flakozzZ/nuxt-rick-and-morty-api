@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useLocationStore = defineStore('location', {
     state: () => ({
-        locations: [] as any,
+        locations: [],
         locationCharacters: [] as any,
     }),
     actions: {
